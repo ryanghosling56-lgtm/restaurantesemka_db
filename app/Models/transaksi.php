@@ -20,7 +20,13 @@ class transaksi extends Model
         'total_bayar',
         'kekurangan',
         'metode_pembayaran_trx',
-        'created_at',
+
 
     ];
+
+    public function pelanggan()
+    {
+        return $this->belongsTo(user::class, 'pelanggan_id');
+        return $this->belongsTo(meja::class, 'meja_id');
+    }
 }

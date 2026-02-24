@@ -12,7 +12,12 @@ class meja extends Model
         'no_meja',
         'status',
         'kapasitas',
-        'created_at',
 
+        
     ];
+
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'meja_id');
+    }
 }
