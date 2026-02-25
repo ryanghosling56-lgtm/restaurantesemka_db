@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
 class UserForm
@@ -11,7 +13,20 @@ class UserForm
     {
         return $schema
             ->components([
-
+                TextInput::make('email')
+                    ->label('Email address')
+                    ->email()
+                    ->required(),
+                TextInput::make('password')
+                    ->password()
+                    ->required(),
+                TextInput::make('name'),
+                TextInput::make('no_hp'),
+                Select::make('status')
+                    ->options(['admin' => 'Admin', 'pelanggan' => 'Pelanggan'])
+                    ->required(),
+                Textarea::make('alamat')
+                    ->nullable(),
             ]);
     }
 }

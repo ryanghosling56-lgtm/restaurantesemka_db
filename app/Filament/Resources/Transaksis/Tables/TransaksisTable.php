@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Users\Tables;
+namespace App\Filament\Resources\Transaksis\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -9,26 +9,39 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class UsersTable
+class TransaksisTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('id')
+                TextColumn::make('pelanggan_id')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('email')
-                    ->label('Email address')
+                TextColumn::make('meja_id')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('kode_booking')
                     ->searchable(),
-                TextColumn::make('name')
+                TextColumn::make('tgl_jam_trx')
+                    ->dateTime()
+                    ->sortable(),
+                TextColumn::make('status_transaksi')
+                    ->badge(),
+                TextColumn::make('nominal_dp')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('metode_pembayaran_dp')
                     ->searchable(),
-                TextColumn::make('no_hp')
-                    ->searchable(),
-                TextColumn::make('status')
-                    ->badge()
-                    ->searchable(),
-                TextColumn::make('alamat')
+                TextColumn::make('status_pembayaran_dp')
+                    ->badge(),
+                TextColumn::make('total_bayar')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('kekurangan')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('metode_pembayaran_trx')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -44,7 +57,7 @@ class UsersTable
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -11,9 +11,9 @@ class user extends Authenticatable
     'email',
     'password',
     'name',
-    'alamat',
     'no_hp',
     'status',
+    'alamat',
     ];
 
     public function transaksi()
