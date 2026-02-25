@@ -13,12 +13,12 @@ class menu extends Model
         'harga',
         'stok',
         'foto',
-        'create_at',
+
 
     ];
 
-    public function category()
+    public function detailTransaksi()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(detail_transaksi::class, 'menu_id');
     }
 }

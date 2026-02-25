@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
-            $table->integer('pelanggan_id');
-            $table->integer('meja_id');
+            $table->unsignedBigInteger('pelanggan_id');
+            $table->unsignedBigInteger('meja_id');
             $table->string('kode_booking',20)->unique();
             $table->dateTime('tgl_jam_trx')->useCurrent();
             $table->enum('status_transaksi', ['pending', 'reserved','checkin','done', 'failed']);
@@ -25,6 +25,9 @@ return new class extends Migration
             $table->bigInteger('kekurangan')->nullable();
             $table->string('metode_pembayaran_trx',100);
             $table->timestamps();
+
+            $table->foreign('pelanggan_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('meja_id')->references('id')->on('meja')->onDelete('cascade');
         });
     }
 
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaksi');
+        Schema::dropIfExists('transaksis');
     }
 };
