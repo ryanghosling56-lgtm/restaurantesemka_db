@@ -1,35 +1,34 @@
 <?php
 
-namespace App\Filament\Resources\Users\Tables;
+namespace App\Filament\Resources\Menus\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class UsersTable
+class MenusTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('id')
+                TextColumn::make('nama_menu')
+                    ->searchable(),
+                TextColumn::make('harga')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('email')
-                    ->label('Email address')
-                    ->searchable(),
-                TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('no_hp')
-                    ->searchable(),
-                TextColumn::make('status')
-                    ->badge()
-                    ->searchable(),
-                TextColumn::make('alamat')
-                    ->searchable(),
+                TextColumn::make('stok')
+                    ->numeric()
+                    ->sortable(),
+                ImageColumn::make('foto')
+                    ->label('Foto')
+                    ->square(),
+
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
