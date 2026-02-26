@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -16,8 +17,7 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('id')
-                    ->numeric()
-                    ->sortable(),
+                    ->label('ID'),
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
@@ -26,10 +26,7 @@ class UsersTable
                 TextColumn::make('no_hp')
                     ->searchable(),
                 TextColumn::make('status')
-                    ->badge()
-                    ->searchable(),
-                TextColumn::make('alamat')
-                    ->searchable(),
+                    ->badge(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -45,6 +42,7 @@ class UsersTable
             ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
+                ViewAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

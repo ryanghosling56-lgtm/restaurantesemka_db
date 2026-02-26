@@ -7,6 +7,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
+use function Laravel\Prompts\select;
+
 class UserForm
 {
     public static function configure(Schema $schema): Schema
@@ -26,7 +28,8 @@ class UserForm
                     ->options(['admin' => 'Admin', 'pelanggan' => 'Pelanggan'])
                     ->required(),
                 Textarea::make('alamat')
-                    ->nullable(),
+                    ->label('Alamat'),
+
             ]);
     }
 }

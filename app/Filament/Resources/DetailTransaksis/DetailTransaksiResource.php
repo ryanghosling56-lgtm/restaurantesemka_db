@@ -7,21 +7,23 @@ use App\Filament\Resources\DetailTransaksis\Pages\EditDetailTransaksi;
 use App\Filament\Resources\DetailTransaksis\Pages\ListDetailTransaksis;
 use App\Filament\Resources\DetailTransaksis\Schemas\DetailTransaksiForm;
 use App\Filament\Resources\DetailTransaksis\Tables\DetailTransaksisTable;
-use App\Models\DetailTransaksi;
 use App\Models\detail_transaksi;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class DetailTransaksiResource extends Resource
 {
     protected static ?string $model = detail_transaksi::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
-    protected static ?string $recordTitleAttribute = 'detail_transaksi';
+   // protected static ?string $recordTitleAttribute = 'detail_transaksi';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Transaksi';
 
     public static function form(Schema $schema): Schema
     {

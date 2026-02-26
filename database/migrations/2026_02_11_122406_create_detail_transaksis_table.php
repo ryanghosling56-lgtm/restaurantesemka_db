@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('detail_transaksi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('transaksi_id');
-            $table->string('password', 255);
             $table->unsignedBigInteger('menu_id');
             $table->integer('qty');
             $table->decimal('harga', 10, 2);

@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Menus;
 use App\Filament\Resources\Menus\Pages\CreateMenu;
 use App\Filament\Resources\Menus\Pages\EditMenu;
 use App\Filament\Resources\Menus\Pages\ListMenus;
-use App\Filament\Resources\Menus\RelationManagers\DetailTransaksiRelationManager;
 use App\Filament\Resources\Menus\Schemas\MenuForm;
 use App\Filament\Resources\Menus\Tables\MenusTable;
 use App\Models\Menu;
@@ -14,14 +13,16 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class MenuResource extends Resource
 {
     protected static ?string $model = Menu::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCake;
+    protected static string|UnitEnum|null $navigationGroup = 'Manajemen Restoran';
 
-    protected static ?string $recordTitleAttribute = 'menu\\';
+    //protected static ?string $recordTitleAttribute = 'menu';
 
     public static function form(Schema $schema): Schema
     {
@@ -36,7 +37,7 @@ class MenuResource extends Resource
     public static function getRelations(): array
     {
         return [
-            DetailTransaksiRelationManager::class,
+            //
         ];
     }
 

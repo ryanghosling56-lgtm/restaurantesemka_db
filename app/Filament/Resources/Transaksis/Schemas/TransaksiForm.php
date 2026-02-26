@@ -7,18 +7,22 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
+use function Laravel\Prompts\select;
+
 class TransaksiForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
-                TextInput::make('pelanggan_id')
+                Select::make('pelanggan_id')
                     ->required()
-                    ->numeric(),
-                TextInput::make('meja_id')
-                    ->required()
-                    ->numeric(),
+                    ->relationship('pelanggan', 'name')
+                    ->label('Pelanggan'),
+
+               Select::make('meja_id')
+                    ->relationship('meja', 'no_meja')
+                    ->required(),
                 TextInput::make('kode_booking')
                     ->required(),
                 DateTimePicker::make('tgl_jam_trx')

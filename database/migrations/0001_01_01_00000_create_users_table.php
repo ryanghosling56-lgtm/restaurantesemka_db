@@ -17,9 +17,9 @@ return new class extends Migration
         $table->string('password');
 
         $table->string('name')->nullable();
-        $table->text('alamat')->nullable();
         $table->string('no_hp',20)->nullable();
         $table->enum('status', ['admin', 'pelanggan']);
+        $table->text('alamat')->nullable();
 
         $table->rememberToken();
         $table->timestamps();
