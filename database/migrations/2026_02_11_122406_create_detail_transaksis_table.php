@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_transaksi', function (Blueprint $table) {
+        Schema::create('detail_transaksis', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('transaksi_id');
             $table->unsignedBigInteger('menu_id');
@@ -20,8 +20,8 @@ return new class extends Migration
             $table->timestamps();
 
 
-            $table->foreign('transaksi_id')->references('id')->on('transaksi')->onDelete('cascade');
-            $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade');
+            $table->foreign('transaksi_id')->references('id')->on('transaksis')->onDelete('cascade');
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
         });
     }
 

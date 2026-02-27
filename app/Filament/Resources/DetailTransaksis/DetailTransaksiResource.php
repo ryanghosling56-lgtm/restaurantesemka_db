@@ -18,6 +18,7 @@ use UnitEnum;
 class DetailTransaksiResource extends Resource
 {
     protected static ?string $model = detail_transaksi::class;
+    protected static ?string $pluralModelLabel = 'Detail Transaksi';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
@@ -35,6 +36,8 @@ class DetailTransaksiResource extends Resource
         return DetailTransaksisTable::configure($table);
     }
 
+
+
     public static function getRelations(): array
     {
         return [
@@ -46,7 +49,7 @@ class DetailTransaksiResource extends Resource
     {
         return [
             'index' => ListDetailTransaksis::route('/'),
-            'create' => CreateDetailTransaksi::route('/create'),
+           // 'create' => CreateDetailTransaksi::route('/create'),
             'edit' => EditDetailTransaksi::route('/{record}/edit'),
         ];
     }

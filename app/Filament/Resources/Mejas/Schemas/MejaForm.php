@@ -15,6 +15,7 @@ class MejaForm
         return $schema
             ->components([
                 TextInput::make('no_meja')
+                    ->numeric()
                     ->required(),
                 Select::make('status')
                     ->options(['kosong' => 'Kosong', 'dipesan' => 'Dipesan', 'terisi' => 'Terisi'])

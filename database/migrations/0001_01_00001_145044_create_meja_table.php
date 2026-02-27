@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('meja', function (Blueprint $table) {
+        Schema::create('mejas', function (Blueprint $table) {
             $table->id();
             $table->string('no_meja')->unique();
             $table->enum('status', ['kosong', 'dipesan','terisi']);
             $table->integer('kapasitas')->default(2);
             $table->timestamps();
+
         });
+
+        
     }
 
     /**

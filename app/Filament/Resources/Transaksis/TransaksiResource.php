@@ -22,13 +22,14 @@ class TransaksiResource extends Resource
 
 
     protected static string|UnitEnum|null $navigationGroup = 'Transaksi';
+    protected static ?string $pluralModelLabel = ' Transaksi';
 
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShoppingCart;
-    protected static ?string $pluralModelLabel = 'Daftar Transaksi';
 
 
-    protected static ?string $recordTitleAttribute = 'transaksi';
+
+    //protected static ?string $recordTitleAttribute = 'transaksi';
 
     public static function form(Schema $schema): Schema
     {

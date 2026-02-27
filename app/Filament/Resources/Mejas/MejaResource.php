@@ -18,6 +18,7 @@ use UnitEnum;
 class MejaResource extends Resource
 {
     protected static ?string $model = Meja::class;
+    protected static ?string $pluralModelLabel = 'Meja';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTableCells;
     protected static string|UnitEnum|null $navigationGroup = 'Manajemen Restoran';

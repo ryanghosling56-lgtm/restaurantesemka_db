@@ -29,7 +29,7 @@ class TransaksisTable
                 TextColumn::make('status_transaksi')
                     ->badge(),
                 TextColumn::make('nominal_dp')
-                    ->numeric()
+                    ->money('IDR', locale: 'id')
                     ->sortable(),
                 TextColumn::make('metode_pembayaran_dp')
                     ->searchable(),

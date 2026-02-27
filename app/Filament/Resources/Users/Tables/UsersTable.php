@@ -12,6 +12,7 @@ use Filament\Tables\Table;
 
 class UsersTable
 {
+    protected static ?string $pluralModelLabel = 'Users';
     public static function configure(Table $table): Table
     {
         return $table
@@ -40,9 +41,10 @@ class UsersTable
                 //
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),
-                ViewAction::make(),
+
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

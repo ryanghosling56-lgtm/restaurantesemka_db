@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class meja extends Model
 {
-    protected $table = 'meja';
+    protected $table = 'mejas';
     protected $guarded = [];
 
 public function meja()

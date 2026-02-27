@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksi', function (Blueprint $table) {
+        Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pelanggan_id');
             $table->unsignedBigInteger('meja_id');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('pelanggan_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('meja_id')->references('id')->on('meja')->onDelete('cascade');
+            $table->foreign('meja_id')->references('id')->on('mejas')->onDelete('cascade');
         });
     }
 

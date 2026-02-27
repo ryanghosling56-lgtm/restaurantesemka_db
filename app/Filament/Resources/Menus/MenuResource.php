@@ -18,6 +18,7 @@ use UnitEnum;
 class MenuResource extends Resource
 {
     protected static ?string $model = Menu::class;
+    protected static ?string $pluralModelLabel = 'Menu';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCake;
     protected static string|UnitEnum|null $navigationGroup = 'Manajemen Restoran';
