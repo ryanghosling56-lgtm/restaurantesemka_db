@@ -22,7 +22,7 @@ class TransaksiResource extends Resource
 
 
     protected static string|UnitEnum|null $navigationGroup = 'Transaksi';
-    protected static ?string $pluralModelLabel = ' Transaksi';
+    protected static ?string $pluralModelLabel = ' Transaksi Pelanggan';
 
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShoppingCart;

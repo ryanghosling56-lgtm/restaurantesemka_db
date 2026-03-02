@@ -49,6 +49,7 @@ class TransaksiForm
 
                         TextInput::make('nominal_dp')
                             ->required()
+                            ->prefix("Rp. ")
                             ->numeric()
                             ->default(0)
                             ->label('Nominal DP')

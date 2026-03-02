@@ -7,6 +7,6 @@ use Illuminate\Support\Facades\Route;
    // return $request->user();
 //})->middleware('auth:sanctum');
 
-Route::post('/login', [App\Http\Controllers\usercontroller::class, 'index']);
+Route::get('/cekdatabase', [App\Http\Controllers\cekcontroller::class, 'index']);
 
 

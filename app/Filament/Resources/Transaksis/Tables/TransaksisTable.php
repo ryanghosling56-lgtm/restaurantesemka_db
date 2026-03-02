@@ -36,10 +36,10 @@ class TransaksisTable
                 TextColumn::make('status_pembayaran_dp')
                     ->badge(),
                 TextColumn::make('total_bayar')
-                    ->numeric()
+                    ->money('IDR', locale: 'id')
                     ->sortable(),
                 TextColumn::make('kekurangan')
-                    ->numeric()
+                    ->money('IDR', locale: 'id')
                     ->sortable(),
                 TextColumn::make('metode_pembayaran_trx')
                     ->searchable(),
