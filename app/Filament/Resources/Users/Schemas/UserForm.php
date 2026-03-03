@@ -3,9 +3,10 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Hash;
 
 use function Laravel\Prompts\select;
 
@@ -20,6 +21,7 @@ class UserForm
                     ->email()
                     ->required(),
                 TextInput::make('password')
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
                     ->password()
                     ->required(),
                 TextInput::make('name'),
