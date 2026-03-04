@@ -21,6 +21,7 @@ class UserForm
                     ->email()
                     ->required(),
                 TextInput::make('password')
+                    ->minLength(5)
                     ->dehydrateStateUsing(fn ($state) => Hash::make($state))
                     ->password()
                     ->required(),

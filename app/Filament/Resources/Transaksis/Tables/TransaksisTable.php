@@ -56,9 +56,10 @@ class TransaksisTable
                 //
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),
-                ViewAction::make(),
+
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
